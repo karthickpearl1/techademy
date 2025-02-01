@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "c1122172-4701-4efa-94a6-e190c43050c9",
+		"name": "TechademyExercise",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6929196"
+	},
+	"item": [
+		{
+			"name": "GetMobile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"VerifyGet\",function(){\r",
+							"    pm.expect(pm.response.code).to.be.eq(200);\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/objects/{{mobileId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"objects",
+						"{{mobileId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateMobile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"VerifyPost\",function(){\r",
+							"    pm.expect(pm.response.code).to.be.eq(200);\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"name\": \"test mobile\",\r\n    \"data\": {\r\n        \"price\": 999.99,\r\n        \"color\": \"Brown\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/objects/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"objects",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateMobile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"VerifyPut\",function(){\r",
+							"    pm.expect(pm.response.code).to.be.eq(200);\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"name\": \"Samsung Galaxy Z Fold2\",\r\n    \"data\": {\r\n        \"price\": 99.99,\r\n        \"color\": \"Brown\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/objects/5",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"objects",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteMobile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"VerifyDelete\",function(){\r",
+							"    pm.expect(pm.response.code).to.be.eq(200);\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"name\": \"Samsung Galaxy Z Fold2\",\r\n    \"data\": {\r\n        \"price\": 999.99,\r\n        \"color\": \"Brown\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/objects/7",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"objects",
+						"7"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://api.restful-api.dev",
+			"type": "string"
+		},
+		{
+			"key": "mobileId",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
