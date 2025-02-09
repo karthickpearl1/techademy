@@ -22,6 +22,12 @@ def verify_upload(driver_fixture):
    header_text = driver_fixture.find_element_by_xpath("//h3")
    assert header_text == "File Uploader"
 
+   select_file = driver_fixture.find_element_by_id("file-upload")
+   select_file.send_keys("c:/temp/test.txt")
+
+   upload_button = driver_fixture.find_element_by_id("file-submit")
+   upload_button.click()
+
 # Re-usable method to check if a checkbox element is checked or not
 def is_checked(self, element):  
   return element.get_attribute("checked")
